@@ -1,0 +1,44 @@
+<section>
+    <div class="jumbotron addArea">
+        <div class="page-header">
+            <h1 class="title">soybeans</h1>
+        </div>
+        <div class="input-group addInput">
+            <input type="text" class="form-control" aria-label="..." #newTodo>
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default" (click)="add(newTodo)">add</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="completedCount">{{completedCount()}}
+        /
+        {{todos.length}}</div>
+
+    <div class="panel panel-default todoList">
+
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <th class="no">no</th>
+                <th class="taskName">task name</th>
+                <th class="done">done?</th>
+                <th class="operation">operation</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="#todo of todos; #i = index" [style.background]="todo.completed ? '#f5f5f5' : '#fff'">
+                    <td>{{i + 1}}</td>
+                    <td (click)="edit(todo)">
+                        <span [hidden]="todo.edited">{{todo.title}}</span>
+                        <input type="text" [(ngModel)]="todo.title" [hidden]="!todo.edited" class="inputEdit">
+                    </td>
+                    <td><input type="checkbox" (click)="toggle(todo)" [checked]="todo.completed"></td>
+                    <td>
+                        <button type="button" class="btn btn-xs btn-success" (click)="update(todo)" [disabled]="!todo.edited">update</button>
+                        <button type="button" class="btn btn-xs btn-danger" (click)="delete(todo)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>

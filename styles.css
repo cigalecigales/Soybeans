@@ -1,0 +1,36 @@
+.addArea {
+  background: #81c850;
+}
+.title {
+    text-align: center;
+    color: #fff !important;
+}
+.page-header {
+  border-bottom: none;
+}
+.addInput {
+    width: 500px;
+    margin: auto;
+}
+.completedCount {
+    width: 95%;
+    text-align: right;
+    margin: 5px auto;
+}
+.todoList {
+    width: 95%;
+    margin: auto;
+}
+.no {
+  width: 60px;
+}
+.done {
+  width: 80px;
+}
+.operation {
+  width: 120px;
+}
+.inputEdit {
+  width: 100%;
+  line-height: normal;
+}
